@@ -1,4 +1,4 @@
-# gw2AchievementTracker-
+# gw2AchievementTracker
 Using Python 3  
 
 Dependencies: 
