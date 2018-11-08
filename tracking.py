@@ -102,13 +102,17 @@ class mainWindow():
         for x in self.safeData:
             self.allList.append(x)
             progress = self.getAchievementProgress(x["id"])
-            if progress["done"] == False:
-                self.noncompleteList.append(x)
-            else:
+            
+            try:
+                if progress["done"] == False:
+                    self.noncompleteList.append(x)
+            except:
                 self.completeList.append(x)
-            if progress['current'] >= progress['max']-3:
-                self.closeList.append(x)
-
+            try:
+                if progress['current'] >= progress['max']-3:
+                    self.closeList.append(x)
+            except:
+                print(progress)
     def setAll(self):
         self.data = dataList
         self.displayAll()
